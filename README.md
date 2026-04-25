@@ -4,7 +4,7 @@ ________________________________________________________________________________
 
 # What is Flayme?
 
-An experimental local browser-based operating system and development environment with Linux-style virtualization, advanced customization, and an open repository ecosystem.
+An experimental local browser-based operating system and development environment with Linux-style virtualization, advanced customization, and an open repo ecosystem.
 
 Flayme is visually inspired by traditional Linux desktop environments rather than any single operating system. It focuses on flexibility, power-user workflows, and making the browser feel like a real desktop.
 
@@ -115,3 +115,7 @@ Flayme aims to become a browser OS for people who want freedom, customization, a
 ## App-Development
 
 We encourage all developers to make apps for Flayme. as the project grows basic apps will be an example of what you can make. If you hsve experience coding linux .app files and possiblly .deb eventually we encourage you to consider making a version for Flayme 
+
+## Forking & Cloning
+
+You are free to fork and improve our technology. if you have the time (which means optional) we would prefer you put the Powered By Flayme badge when its booting to support the project.
