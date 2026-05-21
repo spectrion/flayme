@@ -156,9 +156,9 @@ Contributions welcome! Key areas:
 - `fs/binfmt/` — additional binary format handlers
 - `tools/jayde/` — Jayde GUI frontend
 
-See `Documentation/contributing.md`.
+See `https://spectrion.github.io/flayme/contributing.md`
 
----
+-----
 
 ## Why "Not an emulator"?
 
@@ -170,5 +170,3 @@ See `Documentation/contributing.md`.
 Flayme is a compatibility layer. Wine, WSL1, and Flayme all use the same principle. The application's compiled machine code runs directly on your CPU at full speed. Only the OS-level calls (file I/O, memory allocation, window creation) are intercepted and translated.
 
 ---
-
-*Flayme Kernel — because your kernel shouldn't limit what you can run.*
