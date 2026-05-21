@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flayme Kernel</title>
+  <style>
+    :root {
+      --bg: #0d0d12;
+      --panel: #151520;
+      --text: #f1f1f5;
+      --muted: #a7a7b3;
+      --accent: #ff6b3d;
+      --accent2: #ff914d;
+      --border: #2a2a38;
+      --code: #111118;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,107,61,0.15), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(255,145,77,0.1), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+      padding: 50px 0;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .hero img {
+      width: 180px;
+      border-radius: 24px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 20px 0 10px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+      margin: 40px 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .card strong {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      margin-top: 60px;
+      font-size: 2rem;
+      border-left: 5px solid var(--accent);
+      padding-left: 15px;
+    }
+
+    h3 {
+      margin-top: 35px;
+      color: var(--accent2);
+    }
+
+    p, li {
+      color: #ddd;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 14px;
+      text-align: left;
+    }
+
+    th {
+      background: #1b1b28;
+      color: var(--accent);
+    }
+
+    tr:nth-child(even) {
+      background: rgba(255,255,255,0.02);
+    }
+
+    pre {
+      background: var(--code);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      color: #d6d6e7;
+    }
+
+    code {
+      font-family: Consolas, monospace;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 70px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .architecture {
+      white-space: pre;
+      overflow-x: auto;
+      font-family: Consolas, monospace;
+      background: var(--code);
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid var(--border);
+    }
+
+    a {
+      color: var(--accent2);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section class="hero">
+      <img src="https://spectrion.github.io/assets/IMG_4118.png" alt="Flayme Logo">
+      <h1>Flayme Kernel</h1>
+      <p class="tagline">
+        Hybrid open-source kernel that natively runs Linux apps, Windows EXE/PE,
+        Android APKs, and universal <span class="highlight">.jyd</span> packages.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="info-grid">
+      <div class="card">
+        <strong>Version</strong>
+        1.0.0 "Ember"
+      </div>
+
+      <div class="card">
+        <strong>Base</strong>
+        Linux 6.x
+      </div>
+
+      <div class="card">
+        <strong>Architecture</strong>
+        Hybrid kernel
+      </div>
+
+      <div class="card">
+        <strong>License</strong>
+        GPL-2.0 / LGPL-2.1 / Apache-2.0
+      </div>
+    </section>
+
+    <h2>What This Is</h2>
+
+    <p>
+      Flayme is a <strong>kernel</strong>, not a full operating system.
+      It extends the Linux kernel with multi-runtime compatibility layers
+      capable of running Linux, Windows, Android, and Jayde applications
+      under one unified runtime bus.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>How</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Run Linux ELF apps</td>
+          <td>Native — zero overhead, standard binfmt_elf</td>
+        </tr>
+        <tr>
+          <td>Run Windows .EXE/.PE</td>
+          <td>Wine-Flayme compatibility layer</td>
+        </tr>
+        <tr>
+          <td>Run Android .APK</td>
+          <td>FART — Flayme Android Runtime</td>
+        </tr>
+        <tr>
+          <td>Run .jyd packages</td>
+          <td>Jayde universal app format</td>
+        </tr>
+        <tr>
+          <td>Cross-runtime IPC</td>
+          <td>FRB — Flayme Runtime Bus</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      None of this is CPU emulation. Applications execute native x86-64 or ARM64 machine code directly on the processor.
+      Only APIs and system calls are translated.
+    </p>
+
+    <h2>Architecture</h2>
+
+    <div class="architecture">
+┌──────────────────────────────────────────────────────────────────┐
+│                         USER SPACE                               │
+│                                                                  │
+│  Linux ELF      Windows PE        Android APK      .jyd          │
+│     │               │                 │              │           │
+│  (native)      Wine-Flayme          FART          Jayde          │
+│   binfmt_elf   (Wine fork)       (ART port)      jyd-runner      │
+│     │          ntdll.so            art.so            │           │
+│     │          Win32→Linux       DEX→native      (unpacks +      │
+│     │          syscall shim      JIT/AOT          re-executes)   │
+│     └──────────────┴─────────────────┴──────────────┘           │
+│                              │                                   │
+│                    /dev/frb  │  (Flayme Runtime Bus)             │
+├──────────────────────────────▼───────────────────────────────────┤
+│                      FLAYME KERNEL                               │
+│                                                                  │
+│  binfmt_pe  binfmt_apk  binfmt_jyd  frb.ko  (kernel modules)    │
+│                                                                  │
+│  Standard Linux kernel subsystems:                               │
+│  scheduler | memory | VFS | network | drivers                    │
+└──────────────────────────────────────────────────────────────────┘
+                             HARDWARE
+    </div>
+
+    <h2>Kernel Subsystems</h2>
+
+    <h3>fs/binfmt/binfmt_pe.c</h3>
+    <p>
+      Detects <code>MZ</code> binaries on <code>execve()</code> and forwards execution
+      to Wine-Flayme. Windows x86-64 code runs directly on the CPU.
+    </p>
+
+    <h3>fs/binfmt/binfmt_apk.c</h3>
+    <p>
+      Detects Android APKs and boots the Flayme Android Runtime.
+      DEX bytecode is AOT-compiled into native machine code.
+    </p>
+
+    <h3>fs/binfmt/binfmt_jyd.c</h3>
+    <p>
+      Handles universal <code>.jyd</code> containers and selects the best payload
+      automatically.
+    </p>
+
+    <h3>kernel/frb/frb.c</h3>
+    <p>
+      The Flayme Runtime Bus. Provides lockless IPC communication between Linux,
+      Windows, and Android runtime environments.
+    </p>
+
+    <ul>
+      <li>Unified compositor surface sharing</li>
+      <li>Clipboard sync across runtimes</li>
+      <li>Intent-style messaging</li>
+      <li>Shared file descriptors</li>
+      <li>Wine server replacement</li>
+    </ul>
+
+    <h3>wine-flayme/</h3>
+    <ul>
+      <li>No X11 dependency</li>
+      <li>FRB backend integration</li>
+      <li>Built-in DXVK support</li>
+      <li>Win32 → Linux syscall translation</li>
+    </ul>
+
+    <h3>android-rt/ (FART)</h3>
+    <ul>
+      <li>DEX → native code AOT compilation</li>
+      <li>Wayland compositor integration</li>
+      <li>PipeWire audio</li>
+      <li>Linux-native sensors and camera access</li>
+    </ul>
+
+    <h3>tools/jayde/jayde.c</h3>
+    <p>
+      Jayde creates, signs, installs, and runs <code>.jyd</code> packages.
+    </p>
+
+    <h2>.jyd Package Format</h2>
+
+    <pre><code>[256-byte header "JAYD"] [manifest.json] [sections...] [signature]</code></pre>
+
+    <p>
+      Each section is zstd-compressed and SHA-256 verified.
+      Packages can contain ELF, PE, APK, or mixed universal payloads.
+    </p>
+
+    <pre><code># Convert an existing app
+jayde pack --apk myapp.apk --exe myapp.exe --elf myapp -o myapp.jyd
+
+# Run it
+jayde run myapp.jyd
+
+# Or exec directly
+./myapp.jyd</code></pre>
+
+    <h2>Building</h2>
+
+    <pre><code># Install dependencies
+make deps
+
+# Configure
+make defconfig
+
+# Build everything
+make all
+
+# Step-by-step
+make kernel
+make modules
+make wine-flayme
+make fart
+make jayde
+
+# Test
+make run-qemu
+
+# Build ISO
+make logo && make iso</code></pre>
+
+    <h2>Contributing</h2>
+
+    <p>Contributions are welcome across all subsystems:</p>
+
+    <ul>
+      <li><code>kernel/frb/</code> — FRB optimization</li>
+      <li><code>wine-flayme/</code> — Win32 API coverage</li>
+      <li><code>android-rt/</code> — Android framework APIs</li>
+      <li><code>fs/binfmt/</code> — new binary formats</li>
+      <li><code>tools/jayde/</code> — GUI frontend</li>
+    </ul>
+
+    <p>
+      More info:
+      <a href="https://spectrion.github.io/flayme/contributing.md">
+        spectrion.github.io/flayme/contributing.md
+      </a>
+    </p>
+
+    <h2>Why "Not an emulator"?</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Term</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Emulator</td>
+          <td>Simulates a different CPU architecture in software</td>
+        </tr>
+        <tr>
+          <td>Compatibility Layer</td>
+          <td>Translates APIs/syscalls while machine code runs natively</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Flayme is a compatibility layer. Applications execute directly on the host CPU
+      at native speed while operating system calls are translated underneath.
+    </p>
+
+    <div class="footer">
+      Spectrion Labs • Flayme • Open Source Kernel
+    </div>
+
+  </div>
+</body>
+</html>
